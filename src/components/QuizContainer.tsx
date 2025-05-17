@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { quizQuestions, getResult } from "../data/quizData";
 import { AnswerType, UserAnswers } from "../types/quiz";
@@ -84,12 +83,12 @@ const QuizContainer: React.FC = () => {
   };
   
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-8">
+    <div className="w-full max-w-2xl mx-auto bg-white dark:bg-gray-800 shadow-xl dark:shadow-2xl rounded-2xl p-6 md:p-8 transition-colors">
       {!quizStarted ? (
         <div className="flex flex-col items-center animate-fade-in">
           <div className="text-6xl mb-6 animate-bounce-slow">🎭</div>
-          <h2 className="text-3xl font-bold mb-4 text-center">Ready to discover your vibe?</h2>
-          <p className="text-lg text-gray-600 mb-6 text-center">Answer a few questions to find out what energy you're bringing!</p>
+          <h2 className="text-3xl font-bold mb-4 text-center dark:text-white">Ready to discover your vibe?</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 text-center">Answer a few questions to find out what energy you're bringing!</p>
           <Button
             onClick={startQuiz}
             className="bg-gradient-to-r from-vibe-purple to-vibe-blue hover:opacity-90 px-8 py-6 text-lg"
@@ -128,7 +127,7 @@ const QuizContainer: React.FC = () => {
               />
             ) : (
               <div className="animate-fade-in">
-                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 dark:text-white">
                   {currentQuestion.question}
                 </h2>
                 <RadioGroup value={selectedAnswer || ""} onValueChange={(value) => {
@@ -138,9 +137,9 @@ const QuizContainer: React.FC = () => {
                   }
                 }}>
                   {currentQuestion.options.map((option) => (
-                    <div key={option.id} className="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50">
+                    <div key={option.id} className="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                       <RadioGroupItem value={option.id} id={option.id} />
-                      <label htmlFor={option.id} className="flex items-center cursor-pointer w-full">
+                      <label htmlFor={option.id} className="flex items-center cursor-pointer w-full dark:text-gray-200">
                         <span className="text-xl mr-2">{option.emoji}</span>
                         <span>{option.text}</span>
                       </label>

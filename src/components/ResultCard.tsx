@@ -50,7 +50,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount
         {result.emoji}
       </div>
       
-      <div className="w-full bg-gradient-to-r from-vibe-purple/10 via-vibe-blue/10 to-vibe-teal/10 rounded-lg p-6 mb-6">
+      <div className="w-full bg-gradient-to-r from-vibe-purple/10 via-vibe-blue/10 to-vibe-teal/10 dark:from-vibe-purple/20 dark:via-vibe-blue/20 dark:to-vibe-teal/20 rounded-lg p-6 mb-6">
         <h2 className={`text-3xl md:text-4xl font-bold mb-2 text-${result.color} text-center`}>
           Your Vibe: {result.title}
         </h2>
@@ -60,7 +60,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount
       
       <div className="relative">
         <div className="absolute -inset-1 bg-gradient-to-r from-vibe-purple to-vibe-blue opacity-20 blur rounded-lg"></div>
-        <p className="relative bg-white p-6 rounded-lg text-lg md:text-xl text-center mb-8 max-w-2xl">
+        <p className="relative bg-white dark:bg-gray-800 p-6 rounded-lg text-lg md:text-xl text-center mb-8 max-w-2xl dark:text-gray-200">
           {result.description}
         </p>
       </div>
@@ -86,25 +86,25 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount
       {showDetails && (
         <div className="w-full max-w-2xl mb-6 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-green-50 p-6 rounded-lg border border-green-100">
-              <h3 className={`font-bold text-lg mb-4 text-vibe-green`}>Your Strengths</h3>
+            <div className="bg-green-50 dark:bg-green-900/30 p-6 rounded-lg border border-green-100 dark:border-green-800">
+              <h3 className={`font-bold text-lg mb-4 text-vibe-green dark:text-green-300`}>Your Strengths</h3>
               <ul className="space-y-2">
                 {result.strengths.map((strength, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="text-green-500 mr-2">•</span>
-                    <span>{strength}</span>
+                    <span className="text-green-500 dark:text-green-400 mr-2">•</span>
+                    <span className="dark:text-gray-200">{strength}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="bg-orange-50 p-6 rounded-lg border border-orange-100">
-              <h3 className={`font-bold text-lg mb-4 text-vibe-coral`}>Your Challenges</h3>
+            <div className="bg-orange-50 dark:bg-orange-900/30 p-6 rounded-lg border border-orange-100 dark:border-orange-800">
+              <h3 className={`font-bold text-lg mb-4 text-vibe-coral dark:text-orange-300`}>Your Challenges</h3>
               <ul className="space-y-2">
                 {result.challenges.map((challenge, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="text-orange-500 mr-2">•</span>
-                    <span>{challenge}</span>
+                    <span className="text-orange-500 dark:text-orange-400 mr-2">•</span>
+                    <span className="dark:text-gray-200">{challenge}</span>
                   </li>
                 ))}
               </ul>
@@ -113,20 +113,20 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount
         </div>
       )}
       
-      <div className="w-full p-4 bg-gray-50 rounded-lg mb-6">
-        <h3 className="font-bold text-center mb-2">Your Vibe Stats</h3>
+      <div className="w-full p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg mb-6">
+        <h3 className="font-bold text-center mb-2 dark:text-gray-200">Your Vibe Stats</h3>
         <div className="flex justify-center space-x-4">
           <div className="text-center">
-            <div className="text-2xl font-bold">{answersCount}</div>
-            <div className="text-xs text-gray-500">Questions</div>
+            <div className="text-2xl font-bold dark:text-gray-200">{answersCount}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400">Questions</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold">{result.type.charAt(0).toUpperCase() + result.type.slice(1)}</div>
-            <div className="text-xs text-gray-500">Energy</div>
+            <div className="text-2xl font-bold dark:text-gray-200">{result.type.charAt(0).toUpperCase() + result.type.slice(1)}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400">Energy</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold">{Math.floor(Math.random() * 90) + 10}%</div>
-            <div className="text-xs text-gray-500">Match</div>
+            <div className="text-2xl font-bold dark:text-gray-200">{Math.floor(Math.random() * 90) + 10}%</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400">Match</div>
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount
         
         <Button
           variant="outline"
-          className="w-full border-vibe-purple text-vibe-purple hover:bg-purple-50"
+          className="w-full border-vibe-purple text-vibe-purple dark:border-purple-500 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20"
           onClick={saveToFavorites}
         >
           <Star className="mr-2 h-4 w-4" />
@@ -151,7 +151,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount
         
         <Button
           variant="outline"
-          className="w-full border-vibe-blue text-vibe-blue hover:bg-blue-50"
+          className="w-full border-vibe-blue text-vibe-blue dark:border-blue-500 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20"
           onClick={onRestart}
         >
           Take Quiz Again
