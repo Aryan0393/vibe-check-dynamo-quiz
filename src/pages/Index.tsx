@@ -13,6 +13,12 @@ const Index = () => {
           <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto">
             Find out what energy you're bringing to the table with this quick personality quiz!
           </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <span className="bg-vibe-purple/10 text-vibe-purple px-3 py-1 rounded-full text-sm">Multiple Views</span>
+            <span className="bg-vibe-blue/10 text-vibe-blue px-3 py-1 rounded-full text-sm">Animations</span>
+            <span className="bg-vibe-teal/10 text-vibe-teal px-3 py-1 rounded-full text-sm">Interactive Results</span>
+            <span className="bg-vibe-coral/10 text-vibe-coral px-3 py-1 rounded-full text-sm">Social Sharing</span>
+          </div>
         </header>
 
         <QuizContainer />
