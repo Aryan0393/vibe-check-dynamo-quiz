@@ -1,8 +1,8 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { QuizResult } from "../types/quiz";
 import { Button } from "@/components/ui/button";
-import { Share, Star } from "lucide-react";
+import { Share, Star, ArrowUp, ArrowDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface ResultCardProps {
@@ -13,6 +13,7 @@ interface ResultCardProps {
 
 const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount = 0 }) => {
   const { toast } = useToast();
+  const [showDetails, setShowDetails] = useState(false);
   
   const shareResult = () => {
     if (navigator.share) {
@@ -63,6 +64,54 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, onRestart, answersCount
           {result.description}
         </p>
       </div>
+      
+      <Button 
+        variant="outline"
+        onClick={() => setShowDetails(!showDetails)}
+        className="mb-6 w-full max-w-md flex items-center justify-center"
+      >
+        {showDetails ? (
+          <>
+            <ArrowUp className="mr-2 h-4 w-4" />
+            Hide Personality Details
+          </>
+        ) : (
+          <>
+            <ArrowDown className="mr-2 h-4 w-4" />
+            Show Personality Details
+          </>
+        )}
+      </Button>
+      
+      {showDetails && (
+        <div className="w-full max-w-2xl mb-6 animate-fade-in">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-green-50 p-6 rounded-lg border border-green-100">
+              <h3 className={`font-bold text-lg mb-4 text-vibe-green`}>Your Strengths</h3>
+              <ul className="space-y-2">
+                {result.strengths.map((strength, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>{strength}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="bg-orange-50 p-6 rounded-lg border border-orange-100">
+              <h3 className={`font-bold text-lg mb-4 text-vibe-coral`}>Your Challenges</h3>
+              <ul className="space-y-2">
+                {result.challenges.map((challenge, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-orange-500 mr-2">•</span>
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
       
       <div className="w-full p-4 bg-gray-50 rounded-lg mb-6">
         <h3 className="font-bold text-center mb-2">Your Vibe Stats</h3>

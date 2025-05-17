@@ -21,8 +21,8 @@ export interface QuizResult {
   emoji: string;
   color: string;
   gradient: string;
-  strengths?: string[];
-  challenges?: string[];
+  strengths: string[];
+  challenges: string[];
 }
 
 export type UserAnswers = Record<string, AnswerType>;
