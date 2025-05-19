@@ -61,7 +61,7 @@ bun run dev
 The application will be accessible at http://localhost:5173/ (default Vite port).
 
 🧪 Building for Production
-To build the application for production deployment:
+To build the application for production deployment: https://vibe-check-dynamo-quiz.vercel.app/
 
 bash
 Copy
