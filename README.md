@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+Vibe Check Dynamo Quiz
+Vibe Check Dynamo Quiz is a web-based quiz application designed to assess users' "vibes" or personality traits through a series of questions. Built with modern web technologies, this project serves as an interactive platform for users to engage with and discover insights about themselves.
 
-## Project info
+🚀 Features
+Interactive quiz interface for user engagement.
 
-**URL**: https://lovable.dev/projects/a15dfcc4-281f-4b12-a55c-e0b0e4dad5f2
+Real-time feedback based on user responses.
 
-## How can I edit this code?
+Responsive design ensuring compatibility across devices.
 
-There are several ways of editing your application.
+Modular codebase for easy scalability and maintenance.
 
-**Use Lovable**
+🛠️ Tech Stack
+Frontend: Vite for rapid development and bundling.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a15dfcc4-281f-4b12-a55c-e0b0e4dad5f2) and start prompting.
+Styling: Tailwind CSS for utility-first CSS styling.
 
-Changes made via Lovable will be committed automatically to this repo.
+Language: TypeScript for type-safe JavaScript development.
 
-**Use your preferred IDE**
+Package Manager: Bun for fast package management and scripting.
+Co.Lab
++1
+GitHub
++1
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+📂 Project Structure
+vibe-check-dynamo-quiz/
+├── public/                 # Static assets
+├── src/                    # Source code
+│   ├── components/         # Reusable UI components
+│   ├── App.tsx             # Main application component
+│   └── main.tsx            # Entry point
+├── index.html              # HTML template
+├── package.json            # Project metadata and scripts
+├── tailwind.config.ts      # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── vite.config.ts          # Vite configuration
+📦 Installation
+Clone the repository:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+bash
+Copy
+Edit
+git clone https://github.com/Aryan0393/vibe-check-dynamo-quiz.git
+cd vibe-check-dynamo-quiz
+Install dependencies using Bun:
 
-Follow these steps:
+Ensure you have Bun installed.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+bash
+Copy
+Edit
+bun install
+🚴‍♂️ Running the Application
+To start the development server:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+bash
+Copy
+Edit
+bun run dev
+The application will be accessible at http://localhost:5173/ (default Vite port).
 
-# Step 3: Install the necessary dependencies.
-npm i
+🧪 Building for Production
+To build the application for production deployment:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+bash
+Copy
+Edit
+bun run build
+The optimized and minified files will be generated in the dist/ directory.
 
-**Edit a file directly in GitHub**
+🤝 Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+📄 License
+This project is licensed under the MIT License.
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/a15dfcc4-281f-4b12-a55c-e0b0e4dad5f2) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
